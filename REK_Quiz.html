@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#10142d">
+<title>REK QUIZ</title>
+<style>
+:root{color-scheme:dark;--ink:#f6f4ff;--soft:#b9c3de;--mint:#b3f5df;--line:#ffffff26}
+*{box-sizing:border-box}body{margin:0;min-height:100svh;font-family:system-ui,-apple-system,"Arial",sans-serif;color:var(--ink);background:#10142d;background-image:radial-gradient(ellipse at 8% 5%,#234a66 0,transparent 48%),radial-gradient(ellipse at 92% 70%,#473274 0,transparent 52%);background-attachment:fixed}body:before{content:"";position:fixed;inset:0;pointer-events:none;background:linear-gradient(125deg,#ffffff04,transparent 50%);z-index:-1}
+button,input{font:inherit}button,a,input{touch-action:manipulation}button{cursor:pointer}button:disabled{cursor:default;opacity:.65}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--mint);outline-offset:4px}a{color:#d1d7ff}p{color:var(--soft);line-height:1.65}h1,h2,h3,p{margin-top:0}h1{font-size:clamp(36px,6vw,65px);line-height:1.07;letter-spacing:-2px;margin-bottom:22px}h2{font-size:clamp(24px,4vw,34px);line-height:1.3;letter-spacing:-.6px}h3{margin-bottom:12px}button{color:inherit;border:1px solid var(--line);background:#ffffff0b;border-radius:15px;padding:13px 19px;transition:background .15s,transform .15s}button:hover:not(:disabled){background:#ffffff1c;transform:translateY(-1px)}.primary{background:linear-gradient(135deg,#d6c6ff,#a6c7ff);color:#18203c;border:0;font-weight:750}.primary:hover:not(:disabled){background:#d5ceff}.quiet{background:transparent}.wrap{max-width:1040px;margin:auto;padding:24px;padding-top:max(22px,env(safe-area-inset-top));padding-bottom:max(20px,env(safe-area-inset-bottom))}.glass{background:linear-gradient(140deg,#ffffff14,#ffffff06);border:1px solid #ffffff30;box-shadow:inset 0 1px #ffffff30,0 25px 80px #02061740;backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border-radius:28px}.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 17px;border-radius:21px}.brand{display:flex;align-items:center;gap:10px;font-weight:850;letter-spacing:2px;white-space:nowrap}.mark{display:grid;place-items:center;width:36px;height:36px;border-radius:12px;background:#d5c5ff25;color:#ddd2ff;font-size:25px}.tools{display:flex;gap:8px;align-items:center}.langs{display:flex;padding:4px;border-radius:13px;background:#090c2340}.langs button{padding:8px 10px;border:0;border-radius:9px;font-size:12px}.langs button[aria-pressed=true]{background:#e0d7ff;color:#181832}.more{font-size:20px;padding:5px 13px}main{min-height:72vh;display:flex;align-items:center;justify-content:center;padding:35px 0}.card{padding:clamp(23px,5vw,54px);width:100%}.center{text-align:center}.narrow{max-width:560px}.eyebrow{color:var(--mint);font-size:11px;letter-spacing:2px;font-weight:700;text-transform:uppercase;margin-bottom:19px}.orb{width:114px;height:114px;display:grid;place-items:center;margin:2px auto 27px;font-size:47px;border-radius:34px;transform:rotate(-7deg);color:#ece9ff;background:linear-gradient(135deg,#c3dfff33,#9880eb66);border:1px solid #ffffff6b;box-shadow:inset 0 3px 16px #ffffff40,0 0 60px #a491e82b}.orb span{transform:rotate(7deg)}.accent{color:#d4c6ff}.chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:23px 0}.chip{font-size:12px;border:1px solid var(--line);border-radius:30px;padding:9px 13px;color:#dce0f3}.countdown{font-variant-numeric:tabular-nums;font-size:23px;letter-spacing:2px;margin:25px 0 9px;direction:ltr}.date{font-size:15px;color:#e1d4ff}.small{font-size:12px;color:var(--soft);line-height:1.6}.foot{font-size:11px;color:#9faaca;display:flex;justify-content:space-between;gap:15px}.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:24px}.split{display:grid;grid-template-columns:1fr 1fr;gap:38px;align-items:center}.tabs{display:flex;gap:7px;margin-bottom:22px}.tabs button{flex:1}.tabs .active{background:#dad1ff;color:#181832}label{display:block;text-align:start;font-size:13px;margin:16px 0 8px;color:#d7dff2}input{display:block;width:100%;min-width:0;background:#060d263f;border:1px solid #ffffff36;padding:14px;border-radius:13px;color:white}input[type=file]{padding:10px;font-size:12px}form .primary{width:100%;margin-top:22px}.error{color:#ffc4ce;min-height:20px;font-size:13px;margin:12px 0 0}.avatar{width:66px;height:66px;border-radius:22px;display:inline-grid;place-items:center;overflow:hidden;background:linear-gradient(145deg,#7767a9,#4d7392);border:1px solid #ffffff4c;font-size:27px;font-weight:750;flex-shrink:0}.avatar img{width:100%;height:100%;object-fit:cover}.profile{display:flex;gap:15px;align-items:center;justify-content:center;margin-bottom:26px}.profile h2{margin:0}.game-top{display:flex;justify-content:space-between;align-items:center;gap:15px;color:var(--soft);font-size:13px}.timer{width:69px;height:69px;border-radius:50%;display:grid;place-items:center;border:3px solid var(--mint);font-size:25px;font-weight:800;color:var(--mint);font-variant-numeric:tabular-nums}.timer.urgent{color:#ffc0cc;border-color:#ff8ca9}.progress{height:5px;background:#ffffff13;border-radius:20px;margin:22px 0 30px;overflow:hidden}.progress i{display:block;height:100%;background:linear-gradient(90deg,#c0a9ff,var(--mint));transition:width .1s linear}.options{display:grid;grid-template-columns:1fr 1fr;gap:12px}.option{display:flex;align-items:center;gap:13px;text-align:start;min-height:82px;padding:17px}.option b{font-size:12px;border:1px solid #ffffff36;border-radius:10px;padding:8px 10px;color:#cdd2ed}.option.correct{background:#9bffd523;border-color:#9bffd5;opacity:1}.option.wrong{background:#ff9bb623;border-color:#ff9bb6;opacity:1}.feedback{min-height:48px;margin-top:20px;font-weight:650;color:var(--mint)}.metrics{display:flex;justify-content:center;gap:14px;margin:25px 0}.metric{padding:18px 25px;border-radius:19px;background:#ffffff08;border:1px solid var(--line)}.metric strong{font-size:30px;display:block}.podium{display:flex;justify-content:center;align-items:end;gap:12px;margin:26px 0}.pod{flex:1;max-width:220px;padding:24px 12px 20px;text-align:center;border-radius:23px;background:linear-gradient(145deg,#e8e6ff22,#a899e90b);border:1px solid #ffffff45;box-shadow:inset 0 1px #ffffff4a,0 12px 28px #02061725;min-height:230px}.pod.first{min-height:267px;order:0;background:linear-gradient(145deg,#f7dfad30,#a899e914);border-color:#f0ddb567}.pod.second{order:-1}.pod.third{order:1;min-height:211px}.medal{font-size:24px;margin-bottom:14px}.pod .name{margin:12px 0 8px;font-weight:750;overflow-wrap:anywhere}.pod strong{font-size:24px}.row{display:flex;align-items:center;gap:12px;padding:13px;margin:8px 0;border:1px solid var(--line);border-radius:17px;background:#ffffff06}.row .avatar{width:40px;height:40px;border-radius:13px;font-size:18px}.row .name{flex:1;overflow-wrap:anywhere}.review{margin-top:26px;text-align:start;border-top:1px solid var(--line);padding-top:20px}.review summary{cursor:pointer;font-weight:700}.review article{border-bottom:1px solid var(--line);padding:18px 0}.review p{font-size:13px;margin-bottom:7px}.review h3{font-size:15px;line-height:1.5}.review a{font-size:12px}.notice{padding:13px 17px;background:#fff1bd15;border:1px solid #fff1bd40;border-radius:15px;margin-top:15px;font-size:12px}.hidden{display:none!important}dialog{color:var(--ink);background:#222b48;border:1px solid #ffffff45;border-radius:26px;padding:28px;width:min(440px,90vw);box-shadow:0 35px 100px #0009}dialog::backdrop{background:#060b20aa;backdrop-filter:blur(10px)}.dialog-head{display:flex;align-items:center;justify-content:space-between;gap:10px}.dialog-head h2{font-size:23px;margin:0}.dialog-head button{padding:6px 12px}#confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:9}#confetti i{position:absolute;top:-25px;width:8px;height:16px;animation:fall 3s ease-in forwards}@keyframes fall{to{transform:translateY(110vh) rotate(560deg);opacity:0}}@media(max-width:650px){.wrap{padding:15px}.brand{font-size:12px;letter-spacing:1px}.bar{padding:10px}.tools{gap:3px}.langs button{padding:8px}.mark{width:29px;height:29px;font-size:20px}.more{padding:5px 9px}.split{grid-template-columns:1fr;gap:18px}.split>div:first-child h1{font-size:34px}.options{grid-template-columns:1fr}.option{min-height:65px;padding:12px}main{padding:23px 0}.podium{gap:6px}.pod{padding:17px 6px;min-height:205px}.pod.first{min-height:235px}.pod.third{min-height:190px}.pod .avatar{width:47px;height:47px;border-radius:16px}.pod .name{font-size:12px}.pod strong{font-size:20px}.foot{flex-direction:column;gap:4px;text-align:center}.metric{padding:14px 18px}h1{letter-spacing:-1px}.card{padding:24px 20px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="bar glass">
+<div class="brand" dir="ltr"><span class="mark">✦</span>REK QUIZ</div>
+<div class="tools">
+<nav class="langs" aria-label="Language"><button data-lang="ru">RU</button><button data-lang="en">EN</button><button data-lang="he">עברית</button></nav>
+<button id="menu" class="more" aria-label="Меню">⋯</button>
+</div>
+</header>
+<div id="storageNotice" class="notice hidden" role="status"></div>
+<main id="view"></main>
+<footer class="foot"><span id="footer"></span><span dir="ltr">REK QUIZ · 2027</span></footer>
+</div>
+<dialog id="dialog"></dialog><div id="confetti" aria-hidden="true"></div>
+<script>
+'use strict';
+// Local prototype. For a public competition, move accounts, answers,
+// unlock checks, scoring and time checks to a server.
+const OPEN_AT = Date.parse('2027-05-29T10:00:00+03:00');
+const ACCESS_CODE = '2012';
+const SECONDS = 30;
+const TEXT = {
+ school:['Школьная викторина','School quiz','חידון בית ספרי'],
+ footer:['Неофициальный учебный проект · пробная версия','Unofficial educational project · demo','פרויקט לימודי לא רשמי · גרסת ניסיון'],
+ title:['Знания, которые объединяют.','Knowledge brings us together.','ידע שמחבר בינינו.'],
+ about:['История, люди и добрые дела Российского еврейского конгресса.','The history, people and charitable work of the Russian Jewish Congress.','ההיסטוריה, האנשים ומפעלי הצדקה של הקונגרס היהודי הרוסי.'],
+ soon:['До встречи в игре','See you at the quiz','נתראה בחידון'],
+ closed:['Извините, приложение будет доступно 29 мая 2027 года с 10:00 по Москве. Приносим свои извинения.','Sorry, the app will be available from May 29, 2027 at 10:00 Moscow time. We apologize for the inconvenience.','מצטערים, האפליקציה תהיה זמינה החל מ־29 במאי 2027 בשעה 10:00 לפי שעון מוסקבה. אנו מתנצלים על אי־הנוחות.'],
+ date:['29 мая 2027 · 10:00 МСК','May 29, 2027 · 10:00 Moscow','29 במאי 2027 · 10:00 שעון מוסקבה'],
+ countdown:['Дни : часы : минуты : секунды','Days : hours : minutes : seconds','ימים : שעות : דקות : שניות'],
+ questions:['15 вопросов','15 questions','15 שאלות'], time:['30 секунд на вопрос','30 seconds per question','30 שניות לכל שאלה'], languages:['3 языка','3 languages','3 שפות'],
+ early:['Досрочный вход','Early access','כניסה מוקדמת'], code:['Пароль организатора','Organizer password','סיסמת המארגן'], unlock:['Разблокировать','Unlock','פתיחה'], wrongCode:['Неверный пароль','Incorrect password','סיסמה שגויה'], close:['Закрыть','Close','סגירה'], menu:['Меню','Menu','תפריט'],
+ register:['Регистрация','Sign up','הרשמה'], login:['Вход','Sign in','כניסה'], nick:['Никнейм','Nickname','כינוי'], password:['Пароль','Password','סיסמה'], photo:['Фото профиля — необязательно','Profile photo — optional','תמונת פרופיל — לא חובה'], photoReady:['Фотография добавлена','Photo added','התמונה נוספה'],
+ nickRule:['Введите никнейм от 2 до 24 символов.','Enter a nickname of 2–24 characters.','יש להזין כינוי באורך 2–24 תווים.'], passRule:['Пароль: от 6 до 72 символов.','Password: 6–72 characters.','סיסמה: 6–72 תווים.'], exists:['Этот никнейм уже занят в этом браузере.','This nickname already exists in this browser.','הכינוי הזה כבר קיים בדפדפן הזה.'], invalid:['Неверный никнейм или пароль.','Incorrect nickname or password.','כינוי או סיסמה שגויים.'], badPhoto:['Выберите JPG, PNG или WebP до 5 МБ.','Choose JPG, PNG or WebP up to 5 MB.','יש לבחור JPG, PNG או WebP עד 5 מ״ב.'],
+ local:['Пробная версия: профили и рейтинг доступны только в этом браузере. Используйте тестовый пароль.','Demo: profiles and rankings are stored only in this browser. Use a test password.','גרסת ניסיון: הפרופילים והדירוג נשמרים בדפדפן הזה בלבד. השתמשו בסיסמה לניסיון בלבד.'],
+ noStorage:['Браузер не разрешил сохранение. После закрытия страницы данные могут исчезнуть.','Storage is unavailable. Data may be lost when you close this page.','השמירה אינה זמינה. הנתונים עלולים להימחק בסגירת הדף.'], crypto:['Браузер не поддерживает защищённое создание пароля. Откройте файл в современном Safari или Chrome.','Secure password creation is unavailable. Open the file in a modern Safari or Chrome browser.','יצירת סיסמה מאובטחת אינה זמינה. פתחו את הקובץ בגרסה עדכנית של Safari או Chrome.'],
+ hello:['Добро пожаловать,','Welcome,','ברוכים הבאים,'], ready:['Готовы проверить себя?','Ready to test yourself?','מוכנים לבחון את עצמכם?'], rules:['За верный ответ — 1000 баллов и до 300 за скорость. Время идёт даже при переключении вкладки.','A correct answer earns 1,000 points plus up to 300 for speed. The timer keeps running when you switch tabs.','תשובה נכונה מזכה ב־1,000 נקודות ועד 300 נקודות נוספות על מהירות. הזמן ממשיך לרוץ גם במעבר ללשונית אחרת.'],
+ start:['Начать викторину','Start quiz','התחלת החידון'], board:['Рейтинг','Leaderboard','טבלת דירוג'], logout:['Выйти','Sign out','התנתקות'], home:['На главную','Home','לעמוד הראשי'],
+ question:['Вопрос','Question','שאלה'], points:['Баллы','Points','נקודות'], seconds:['сек.','sec','שניות'], correct:['Верно!','Correct!','נכון!'], incorrect:['Неверно','Incorrect','לא נכון'], timeout:['Время вышло','Time is up','הזמן נגמר'],
+ result:['Ваш результат','Your result','התוצאה שלכם'], complete:['Викторина завершена!','Quiz complete!','החידון הסתיים!'], right:['Верных ответов','Correct answers','תשובות נכונות'], again:['Попробовать ещё раз','Try again','ניסיון נוסף'], winners:['Победители','Winners','המנצחים'], localBoard:['Лучший результат каждого участника в этом браузере.','Each player’s best result in this browser.','התוצאה הטובה ביותר של כל משתתף בדפדפן הזה.'], empty:['Пока никто не завершил викторину.','No one has finished the quiz yet.','אף אחד עדיין לא סיים את החידון.'],
+ review:['Ответы и источники','Answers and sources','תשובות ומקורות'], yours:['Ваш ответ','Your answer','התשובה שלכם'], rightAnswer:['Правильный ответ','Correct answer','התשובה הנכונה'], noAnswer:['Нет ответа','No answer','אין תשובה'], source:['Источник: РЕК','Source: RJC','מקור: הקונגרס היהודי הרוסי'], wait:['Подождите…','Please wait…','נא להמתין…'], relock:['Закрыть досрочный доступ','Close early access','סגירת הגישה המוקדמת']
+};
+const QUESTIONS = [
+  {
+    q: { ru: 'В каком году был основан Российский еврейский конгресс?', en: 'In which year was the Russian Jewish Congress founded?', he: 'באיזו שנה נוסד הקונגרס היהודי הרוסי?' },
+    opts: { ru: ['1991', '1996', '2001', '2010'], en: ['1991', '1996', '2001', '2010'], he: ['1991', '1996', '2001', '2010'] },
+    answer: 1, source: 'https://rjc.ru/istoriya-sozdaniya-rek/'
+  },
+  {
+    q: { ru: 'Как расшифровывается сокращение «РЕК»?', en: 'What does the Russian abbreviation “REK” stand for?', he: 'מה פירוש ראשי התיבות РЕК ברוסית?' },
+    opts: {
+      ru: ['Российский еврейский конгресс', 'Российский этнографический комитет', 'Региональный еврейский клуб', 'Российский экономический конгресс'],
+      en: ['Russian Jewish Congress', 'Russian Ethnographic Committee', 'Regional Jewish Club', 'Russian Economic Congress'],
+      he: ['הקונגרס היהודי הרוסי', 'הוועדה האתנוגרפית הרוסית', 'מועדון יהודי אזורי', 'הקונגרס הכלכלי הרוסי']
+    }, answer: 0, source: 'https://rjc.ru/'
+  },
+  {
+    q: { ru: 'Для чего первоначально создавался РЕК?', en: 'What was the RJC originally created to support?', he: 'לשם מה הוקם הקונגרס היהודי הרוסי?' },
+    opts: {
+      ru: ['Проведение спортивных чемпионатов', 'Развитие банковской системы', 'Возрождение еврейской жизни в России', 'Организация туристических поездок'],
+      en: ['Organizing sports championships', 'Developing the banking system', 'Reviving Jewish life in Russia', 'Organizing tourist trips'],
+      he: ['ארגון אליפויות ספורט', 'פיתוח מערכת הבנקאות', 'חידוש החיים היהודיים ברוסיה', 'ארגון טיולים לתיירים']
+    }, answer: 2, source: 'https://rjc.ru/istoriya-sozdaniya-rek/'
+  },
+  {
+    q: { ru: 'Как РЕК определяет свой общественный характер?', en: 'How does the RJC describe the nature of its organization?', he: 'כיצד מגדיר הקונגרס היהודי הרוסי את אופיו?' },
+    opts: {
+      ru: ['Политическая партия', 'Светская общественная организация', 'Государственное министерство', 'Спортивная федерация'],
+      en: ['Political party', 'Secular public organization', 'Government ministry', 'Sports federation'],
+      he: ['מפלגה פוליטית', 'ארגון ציבורי חילוני', 'משרד ממשלתי', 'התאחדות ספורט']
+    }, answer: 1, source: 'https://rjc.ru/'
+  },
+  {
+    q: { ru: 'Членом какой международной организации является РЕК?', en: 'Which international organization is the RJC a member of?', he: 'באיזה ארגון בין־לאומי חבר הקונגרס היהודי הרוסי?' },
+    opts: {
+      ru: ['Всемирного еврейского конгресса', 'Международного олимпийского комитета', 'Всемирной торговой организации', 'Европейского космического агентства'],
+      en: ['World Jewish Congress', 'International Olympic Committee', 'World Trade Organization', 'European Space Agency'],
+      he: ['הקונגרס היהודי העולמי', 'הוועד האולימפי הבין־לאומי', 'ארגון הסחר העולמי', 'סוכנות החלל האירופית']
+    }, answer: 0, source: 'https://rjc.ru/'
+  },
+  {
+    q: { ru: 'Кто был первым президентом Российского еврейского конгресса?', en: 'Who was the first president of the Russian Jewish Congress?', he: 'מי היה הנשיא הראשון של הקונגרס היהודי הרוסי?' },
+    opts: {
+      ru: ['Юрий Каннер', 'Александр Генцис', 'Владимир Гусинский', 'Вячеслав Кантор'],
+      en: ['Yuri Kanner', 'Alexander Gentsis', 'Vladimir Gusinsky', 'Vyacheslav Kantor'],
+      he: ['יורי קאנר', 'אלכסנדר גנציס', 'ולדימיר גוסינסקי', 'ויאצ׳סלב קנטור']
+    }, answer: 2, source: 'https://rjc.ru/ru/news/rossijskij-evrejskij-kongress-chetvert-veka-dobryh-del/'
+  },
+  {
+    q: { ru: 'Кто возглавил РЕК в мае 2025 года?', en: 'Who became president of the RJC in May 2025?', he: 'מי התמנה לנשיא הקונגרס היהודי הרוסי במאי 2025?' },
+    opts: {
+      ru: ['Александр Генцис', 'Борис Ельцин', 'Владимир Гусинский', 'Евгений Сатановский'],
+      en: ['Alexander Gentsis', 'Boris Yeltsin', 'Vladimir Gusinsky', 'Yevgeny Satanovsky'],
+      he: ['אלכסנדר גנציס', 'בוריס ילצין', 'ולדימיר גוסינסקי', 'יבגני סטנובסקי']
+    }, answer: 0, source: 'https://rjc.ru/ru/persony/genczis-aleksandr-yurevich/'
+  },
+  {
+    q: { ru: 'Кто стал почётным президентом РЕК в 2025 году?', en: 'Who became honorary president of the RJC in 2025?', he: 'מי הפך לנשיא הכבוד של הקונגרס היהודי הרוסי בשנת 2025?' },
+    opts: {
+      ru: ['Владимир Слуцкер', 'Леонид Невзлин', 'Михаил Бройтман', 'Юрий Каннер'],
+      en: ['Vladimir Slutsker', 'Leonid Nevzlin', 'Mikhail Broytman', 'Yuri Kanner'],
+      he: ['ולדימיר סלוצקר', 'לאוניד נבזלין', 'מיכאיל ברויטמן', 'יורי קאנר']
+    }, answer: 3, source: 'https://rjc.ru/ru/persony/genczis-aleksandr-yurevich/'
+  },
+  {
+    q: { ru: 'Где расположена Мемориальная синагога, связанная с проектами РЕК?', en: 'Where is the Memorial Synagogue associated with RJC projects located?', he: 'היכן נמצא בית הכנסת לזיכרון הקשור למיזמי הקונגרס?' },
+    opts: {
+      ru: ['На Красной площади', 'На Поклонной горе', 'На ВДНХ', 'В Московском Кремле'],
+      en: ['Red Square', 'Poklonnaya Hill', 'VDNKh Exhibition Center', 'The Moscow Kremlin'],
+      he: ['בכיכר האדומה', 'בגבעת פוקלונאיה', 'במרכז התערוכות ודנ״ח', 'בקרמלין של מוסקבה']
+    }, answer: 1, source: 'https://rjc.ru/ru/projects/memorialnaya-sinagoga-na-poklonnoj-gore/'
+  },
+  {
+    q: { ru: 'В каком году состоялось торжественное открытие Мемориальной синагоги на Поклонной горе?', en: 'In what year was the Memorial Synagogue on Poklonnaya Hill officially opened?', he: 'באיזו שנה נחנך בית הכנסת לזיכרון בגבעת פוקלונאיה?' },
+    opts: { ru: ['1988', '1993', '1998', '2008'], en: ['1988', '1993', '1998', '2008'], he: ['1988', '1993', '1998', '2008'] },
+    answer: 2, source: 'https://rjc.ru/ru/projects/memorialnaya-sinagoga-na-poklonnoj-gore/'
+  },
+  {
+    q: { ru: 'Какой теме посвящена «Неделя памяти», организуемая РЕК?', en: 'What is the RJC’s “Week of Remembrance” dedicated to?', he: 'לזכר מה מוקדש ״שבוע הזיכרון״ שמארגן הקונגרס?' },
+    opts: {
+      ru: ['Жертвам Холокоста', 'Истории космонавтики', 'Олимпийским играм', 'Истории железных дорог'],
+      en: ['Victims of the Holocaust', 'History of space exploration', 'The Olympic Games', 'History of railways'],
+      he: ['קורבנות השואה', 'ההיסטוריה של חקר החלל', 'המשחקים האולימפיים', 'ההיסטוריה של מסילות הברזל']
+    }, answer: 0, source: 'https://rjc.ru/week/'
+  },
+  {
+    q: { ru: 'Когда отмечается Международный день памяти жертв Холокоста?', en: 'When is International Holocaust Remembrance Day observed?', he: 'מתי מצוין יום הזיכרון הבין־לאומי לשואה?' },
+    opts: {
+      ru: ['1 января', '8 марта', '9 мая', '27 января'],
+      en: ['January 1', 'March 8', 'May 9', 'January 27'],
+      he: ['1 בינואר', '8 במרץ', '9 במאי', '27 בינואר']
+    }, answer: 3, source: 'https://rjc.ru/week/'
+  },
+  {
+    q: { ru: 'С каким научно-просветительным центром сотрудничает РЕК для сохранения памяти о жертвах нацизма?', en: 'Which educational and research center does the RJC work with to preserve Holocaust memory?', he: 'עם איזה מרכז מחקר וחינוך משתף הקונגרס פעולה לשימור זיכרון השואה?' },
+    opts: {
+      ru: ['Центром «Арктика»', 'Центром «Холокост»', 'Центром «Космос»', 'Центром «Океан»'],
+      en: ['Arctic Center', 'Holocaust Center', 'Space Center', 'Ocean Center'],
+      he: ['מרכז ״הארקטי״', 'מרכז ״השואה״', 'מרכז ״החלל״', 'מרכז ״האוקיינוס״']
+    }, answer: 1, source: 'https://rjc.ru/ru/projects/npcz-holokost/'
+  },
+  {
+    q: { ru: 'Какой из этих проектов указан среди образовательных инициатив РЕК?', en: 'Which of these is listed among the RJC’s educational projects?', he: 'איזה מהמיזמים הבאים מופיע בין מיזמי החינוך של הקונגרס?' },
+    opts: {
+      ru: ['«Формула-1 для школьников»', '«Космический десант»', '«Пижамная библиотечка»', '«Морская регата»'],
+      en: ['Formula 1 for Schools', 'Space Landing', 'PJ Library', 'Sea Regatta'],
+      he: ['״פורמולה 1 לתלמידים״', '״נחיתה בחלל״', '״ספריית הפיג׳מות״', '״רגטה ימית״']
+    }, answer: 2, source: 'https://rjc.ru/ru/projects/project-61/'
+  },
+  {
+    q: { ru: 'Какое направление входит в деятельность Российского еврейского конгресса?', en: 'Which area is part of the Russian Jewish Congress’s work?', he: 'איזה תחום נכלל בפעילות הקונגרס היהודי הרוסי?' },
+    opts: {
+      ru: ['Противодействие антисемитизму', 'Запуск спутников', 'Строительство автомагистралей', 'Производство самолётов'],
+      en: ['Combating antisemitism', 'Launching satellites', 'Building highways', 'Manufacturing aircraft'],
+      he: ['מאבק באנטישמיות', 'שיגור לוויינים', 'סלילת כבישים מהירים', 'ייצור מטוסים']
+    }, answer: 0, source: 'https://rjc.ru/proekty/'
+  }
+];
+const $ = s => document.querySelector(s);
+const escapeHTML = s => String(s ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const memory = new Map();
+let storageFailed = false;
+function read(key, fallback, session=false) {
+ try { const value=(session?sessionStorage:localStorage).getItem(key); return value?JSON.parse(value):fallback; }
+ catch { storageFailed=true; return memory.get(key) ?? fallback; }
+}
+function write(key,value,session=false) {
+ memory.set(key,value);
+ try {(session?sessionStorage:localStorage).setItem(key,JSON.stringify(value));}
+ catch {storageFailed=true;}
+ showStorage();
+}
+const KEY='rek-html-v1-';
+let lang=read(KEY+'lang','ru');
+if(!['ru','en','he'].includes(lang))lang='ru';
+const t = key => TEXT[key][['ru','en','he'].indexOf(lang)];
+let users=read(KEY+'users',[]);
+if(!Array.isArray(users))users=[];
+let user=users.find(u=>u.id===read(KEY+'session',null,true)) || null;
+let early=read(KEY+'early',false,true)===true;
+let run=read(KEY+'run',null,true);
+if(!user || run?.userId!==user.id || !Array.isArray(run?.answers))run=null;
+let page=run&&!run.done?'game':'home',mode='register',photo='',draftNick='',draftPass='';
+const allowed=()=>early||Date.now()>=OPEN_AT;
+function showStorage(){const n=$('#storageNotice');if(n){n.textContent=t('noStorage');n.classList.toggle('hidden',!storageFailed);}}
+function saveRun(){write(KEY+'run',run,true);}
+function avatar(u){const image=/^data:image\/jpeg;base64,[a-zA-Z0-9+/=]+$/.test(u?.photo||'');return `<span class="avatar">${image?`<img src="${escapeHTML(u.photo)}" alt="">`:escapeHTML((u?.nick||'?').slice(0,1).toUpperCase())}</span>`;}
+function chips(){return `<div class="chips"><span class="chip">${t('questions')}</span><span class="chip">${t('time')}</span><span class="chip">${t('languages')}</span></div>`;}
+function button(action,key,primary=false){return `<button data-action="${action}" class="${primary?'primary':'quiet'}">${t(key)}</button>`;}
+function locked(){return `<section class="card glass center"><div class="eyebrow">${t('soon')}</div><div class="orb"><span>✦</span></div><h1>${t('title')}</h1><p style="max-width:560px;margin:0 auto">${t('closed')}</p><div class="countdown" id="countdown"></div><div class="small">${t('countdown')}</div><p class="date" style="margin-top:24px">${t('date')}</p>${chips()}</section>`;}
+function auth(){return `<section class="card glass split"><div><div class="eyebrow">${t('school')}</div><h1>${t('title')}</h1><p>${t('about')}</p>${chips()}<p class="small">${t('local')}</p></div><div><div class="tabs">${['register','login'].map(m=>`<button data-mode="${m}" class="${mode===m?'active':''}">${t(m)}</button>`).join('')}</div><form id="authForm"><label for="nick">${t('nick')}</label><input id="nick" name="nick" minlength="2" maxlength="24" required autocomplete="username" value="${escapeHTML(draftNick)}"><label for="password">${t('password')}</label><input id="password" name="password" type="password" minlength="6" maxlength="72" required autocomplete="${mode==='register'?'new-password':'current-password'}" value="${escapeHTML(draftPass)}">${mode==='register'?`<label for="photo">${t('photo')}</label><input id="photo" type="file" accept="image/jpeg,image/png,image/webp"><div id="photoStatus" class="small">${photo?t('photoReady'):''}</div>`:''}<button class="primary" type="submit">${t(mode)}</button><p class="error" id="authError" role="alert"></p></form></div></section>`;}
+function home(){return `<section class="card glass center narrow"><div class="profile">${avatar(user)}<div><div class="small">${t('hello')}</div><h2><bdi>${escapeHTML(user.nick)}</bdi></h2></div></div><h2>${t('ready')}</h2><p>${t('rules')}</p>${chips()}<div class="actions">${button('start','start',true)}${button('board','board')}</div><p class="small" style="margin-top:24px">${t('local')}</p></section>`;}
+function question(){const q=QUESTIONS[run.index],a=run.answers[run.index];return `<section class="card glass"><div class="game-top"><div><div class="eyebrow" style="margin-bottom:7px">${t('question')} ${run.index+1} / 15</div><span>${t('points')}: <b>${run.score}</b></span></div><div class="timer" id="timer" role="timer" aria-label="${t('seconds')}">30</div></div><div class="progress"><i id="progress"></i></div><h2 tabindex="-1" id="questionTitle">${escapeHTML(q.q[lang])}</h2><div class="options">${q.opts[lang].map((opt,i)=>`<button class="option ${a?(i===q.answer?'correct':i===a.choice?'wrong':''):''}" data-choice="${i}" ${a?'disabled':''}><b>${lang==='he'?['א','ב','ג','ד'][i]:['A','B','C','D'][i]}</b><span>${escapeHTML(opt)} ${a&&i===q.answer?'✓':''}${a&&i===a.choice&&i!==q.answer?'✕':''}</span></button>`).join('')}</div><div class="feedback" role="status">${a?`${a.choice===null?t('timeout'):a.correct?t('correct'):t('incorrect')} ${a.points?'+'+a.points:''}`:''}</div><p class="small" style="margin:0">${t('time')}</p></section>`;}
+function compare(a,b){return b.score-a.score||b.correct-a.correct||a.elapsed-b.elapsed||a.finished-b.finished;}
+function ranking(){return users.filter(u=>u.best).map(u=>({...u,...u.best})).sort(compare);}
+function board(){const rows=ranking();return `<section class="card glass"><div class="center"><div class="eyebrow">REK QUIZ</div><h1>${t('winners')}</h1><p>${t('localBoard')}</p></div>${!rows.length?`<p class="center">${t('empty')}</p>`:`<div class="podium">${rows.slice(0,3).map((u,i)=>`<div class="pod ${['first','second','third'][i]}"><div class="medal">${['🥇','🥈','🥉'][i]}</div>${avatar(u)}<div class="name"><bdi>${escapeHTML(u.nick)}</bdi></div><strong>${u.score}</strong><div class="small">${t('points')}</div></div>`).join('')}</div>${rows.slice(3).map((u,i)=>`<div class="row"><span>${i+4}</span>${avatar(u)}<span class="name"><bdi>${escapeHTML(u.nick)}</bdi></span><strong>${u.score}</strong></div>`).join('')}`}<div class="actions">${button('home','home')}</div></section>`;}
+function results(){return `<section class="card glass center"><div class="orb"><span>✧</span></div><div class="eyebrow">${t('result')}</div><h1>${t('complete')}</h1><div class="metrics"><div class="metric"><strong>${run.score}</strong><span class="small">${t('points')}</span></div><div class="metric"><strong>${run.correct} / 15</strong><span class="small">${t('right')}</span></div></div><div class="actions">${button('board','board',true)}${button('start','again')}${button('home','home')}</div><details class="review"><summary>${t('review')}</summary>${QUESTIONS.map((q,i)=>{const a=run.answers[i];return `<article><h3>${i+1}. ${escapeHTML(q.q[lang])}</h3><p>${t('yours')}: ${a.choice===null?t('noAnswer'):escapeHTML(q.opts[lang][a.choice])} ${a.correct?'✓':'✕'}</p><p>${t('rightAnswer')}: ${escapeHTML(q.opts[lang][q.answer])}</p><a href="${q.source}" target="_blank" rel="noopener noreferrer">${t('source')} ↗</a></article>`;}).join('')}</details></section>`;}
+function render(){
+ document.documentElement.lang=lang;document.documentElement.dir=lang==='he'?'rtl':'ltr';
+ document.querySelectorAll('[data-lang]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lang===lang));
+ $('#footer').textContent=t('footer');$('#menu').setAttribute('aria-label',t('menu'));
+ $('#menu').disabled=page==='game'&&allowed();
+ $('#view').innerHTML=!allowed()?locked():!user?auth():page==='game'?question():page==='board'?board():page==='results'&&run?.done?results():home();
+ showStorage();updateClock();
+}
+function updateClock(){
+ if(!allowed()){
+  const el=$('#countdown');if(el){let n=Math.max(0,Math.floor((OPEN_AT-Date.now())/1000));el.textContent=[Math.floor(n/86400),Math.floor(n%86400/3600),Math.floor(n%3600/60),n%60].map(n=>String(n).padStart(2,'0')).join(' : ');}return;
+ }
+ if($('#countdown')){render();return;}
+ if(page!=='game'||!run||run.done)return;
+ const left=run.answers[run.index]?0:Math.max(0,run.deadline-Date.now());
+ if($('#timer')){$('#timer').textContent=Math.ceil(left/1000);$('#timer').classList.toggle('urgent',left<10000);}
+ if($('#progress'))$('#progress').style.width=(left/(SECONDS*1000)*100)+'%';
+}
+const hex=bytes=>Array.from(bytes,b=>b.toString(16).padStart(2,'0')).join('');
+async function hashPassword(password,salt){
+ if(!globalThis.crypto?.subtle)throw new Error(t('crypto'));
+ const enc=new TextEncoder();
+ const key=await crypto.subtle.importKey('raw',enc.encode(password),'PBKDF2',false,['deriveBits']);
+ return hex(new Uint8Array(await crypto.subtle.deriveBits({name:'PBKDF2',salt:enc.encode(salt),iterations:100000,hash:'SHA-256'},key,256)));
+}
+let authBusy=false,photoBusy=false;
+async function signIn(form){
+ if(authBusy||photoBusy)return;
+ const nick=form.nick.value.trim(),password=form.password.value;
+ const error=$('#authError');error.textContent='';
+ if(nick.length<2||nick.length>24){error.textContent=t('nickRule');return;}
+ if(password.length<6||password.length>72){error.textContent=t('passRule');return;}
+ authBusy=true;const submit=form.querySelector('button[type=submit]');submit.disabled=true;submit.textContent=t('wait');
+ try{
+  const found=users.find(u=>u.nick.toLocaleLowerCase()===nick.toLocaleLowerCase());
+  if(mode==='register'){
+   if(found)throw new Error(t('exists'));
+   if(!globalThis.crypto?.subtle)throw new Error(t('crypto'));
+   const salt=hex(crypto.getRandomValues(new Uint8Array(16)));
+   const hash=await hashPassword(password,salt);
+   user={id:hex(crypto.getRandomValues(new Uint8Array(12))),nick,hash,salt,photo,best:null};
+   users.push(user);write(KEY+'users',users);
+  }else{
+   if(!found||await hashPassword(password,found.salt)!==found.hash)throw new Error(t('invalid'));
+   user=found;
+  }
+  draftNick='';draftPass='';photo='';run=null;saveRun();write(KEY+'session',user.id,true);page='home';render();
+ }catch(e){error.textContent=e.message;}finally{authBusy=false;submit.disabled=false;submit.textContent=t(mode);}
+}
+async function readPhoto(file){
+ if(!file)return;
+ if(!['image/jpeg','image/png','image/webp'].includes(file.type)||file.size>5*1024*1024){$('#authError').textContent=t('badPhoto');return;}
+ photoBusy=true;$('#photoStatus').textContent=t('wait');
+ const url=URL.createObjectURL(file);
+ try{
+  const img=new Image();img.src=url;await img.decode();
+  const canvas=document.createElement('canvas');canvas.width=256;canvas.height=256;
+  const ctx=canvas.getContext('2d'),s=Math.min(img.naturalWidth,img.naturalHeight);
+  ctx.fillStyle='#202943';ctx.fillRect(0,0,256,256);ctx.drawImage(img,(img.naturalWidth-s)/2,(img.naturalHeight-s)/2,s,s,0,0,256,256);
+  photo=canvas.toDataURL('image/jpeg',.8);$('#photoStatus').textContent=t('photoReady');$('#authError').textContent='';
+ }catch{$('#authError').textContent=t('badPhoto');$('#photoStatus').textContent='';}
+ finally{URL.revokeObjectURL(url);photoBusy=false;}
+}
+function start(){
+ if(!user||!allowed())return;
+ run={userId:user.id,index:0,answers:[],score:0,correct:0,elapsed:0,deadline:Date.now()+SECONDS*1000,nextAt:0,done:false};
+ page='game';saveRun();render();$('#questionTitle')?.focus();
+}
+function record(choice,at){
+ const correct=choice===QUESTIONS[run.index].answer;
+ const elapsed=choice===null?SECONDS*1000:Math.max(0,Math.min(SECONDS*1000,at-(run.deadline-SECONDS*1000)));
+ const points=correct?1000+Math.max(0,Math.ceil((SECONDS*1000-elapsed)/100)):0;
+ run.answers.push({choice,correct,points});run.score+=points;run.correct+=Number(correct);run.elapsed+=elapsed;
+ run.nextAt=at+1600;saveRun();
+}
+function advance(){
+ if(page!=='game'||!run||run.done)return;
+ const now=Date.now();let changed=false;
+ for(let guard=0;guard<32;guard++){
+  if(!run.answers[run.index]){if(now<run.deadline)break;record(null,run.deadline);changed=true;}
+  if(now<run.nextAt)break;
+  if(run.index===QUESTIONS.length-1){finish();return;}
+  run.index++;run.deadline=run.nextAt+SECONDS*1000;run.nextAt=0;changed=true;saveRun();
+ }
+ if(changed)render();updateClock();
+}
+function choose(choice){
+ const index=run?.index;
+ advance();if(page!=='game'||run.done||run.index!==index||run.answers[run.index])return;
+ record(choice,Date.now());render();
+}
+function finish(){
+ run.done=true;run.finished=run.nextAt;
+ if(!user.best||compare(run,user.best)<0){user.best={score:run.score,correct:run.correct,elapsed:run.elapsed,finished:run.finished};write(KEY+'users',users);}
+ saveRun();page='results';render();celebrate();
+}
+function celebrate(){if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const c=$('#confetti');c.innerHTML=Array.from({length:38},(_,i)=>`<i style="left:${Math.random()*100}%;background:${['#c5b2ff','#a4f2d8','#f8d69e'][i%3]};animation-delay:${Math.random()*.7}s"></i>`).join('');setTimeout(()=>c.replaceChildren(),4000);}
+function menu(){
+ if(page==='game'&&allowed())return;
+ const d=$('#dialog');d.innerHTML=`<div class="dialog-head"><h2>${allowed()?t('menu'):t('early')}</h2><button id="closeDialog" aria-label="${t('close')}">×</button></div>${!allowed()?`<form id="unlockForm"><label for="access">${t('code')}</label><input id="access" type="password" inputmode="numeric" required autocomplete="off"><button class="primary" type="submit">${t('unlock')}</button><p class="error" id="unlockError" role="alert"></p></form>`:`<div class="actions">${user?button('logout','logout'):''}${early?button('relock','relock'):''}</div><p class="small" style="margin-top:20px">${t('local')}</p>`}`;
+ d.showModal();$('#access')?.focus();
+}
+function logOut(){user=null;run=null;page='home';draftPass='';write(KEY+'session',null,true);saveRun();render();}
+document.addEventListener('submit',event=>{
+ event.preventDefault();
+ if(event.target.id==='authForm')signIn(event.target);
+ if(event.target.id==='unlockForm'){
+  if($('#access').value.trim()!==ACCESS_CODE){$('#unlockError').textContent=t('wrongCode');return;}
+  early=true;write(KEY+'early',true,true);$('#dialog').close();render();
+ }
+});
+document.addEventListener('change',e=>{if(e.target.id==='photo')readPhoto(e.target.files[0]);});
+document.addEventListener('click',e=>{
+ const b=e.target.closest('button');if(!b||b.disabled)return;
+ if(b.dataset.lang){
+  if(authBusy||photoBusy)return;
+  if($('#nick')){draftNick=$('#nick').value;draftPass=$('#password').value;}
+  lang=b.dataset.lang;write(KEY+'lang',lang);advance();render();if($('#dialog').open){$('#dialog').close();menu();}return;
+ }
+ if(b.dataset.mode){if(authBusy||photoBusy)return;draftNick=$('#nick').value;draftPass=$('#password').value;mode=b.dataset.mode;render();return;}
+ if(b.id==='menu'){menu();return;}
+ if(b.id==='closeDialog'){$('#dialog').close();return;}
+ if(b.dataset.choice!==undefined){choose(Number(b.dataset.choice));return;}
+ const action=b.dataset.action;
+ if(action==='start')start();
+ if(action==='board'){page='board';render();}
+ if(action==='home'){page='home';render();}
+ if(action==='logout'){$('#dialog').close();logOut();}
+ if(action==='relock'){early=false;write(KEY+'early',false,true);$('#dialog').close();logOut();}
+});
+document.addEventListener('visibilitychange',()=>{advance();updateClock();});
+window.addEventListener('pageshow',()=>{advance();updateClock();});
+render();advance();setInterval(()=>{advance();updateClock();},100);
+</script>
+</body>
+</html>
